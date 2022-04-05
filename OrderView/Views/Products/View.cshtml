@@ -1,0 +1,31 @@
+﻿@model IEnumerable<OrderView.Models.Addresee>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View Details</h2>
+
+<table class="view" id="getview">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td id="useraddress">
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("View", "View", new { id = "useraddress" }) |
+            @Html.ActionLink("Home", "Home") |
+        </td>
+    </tr>
+}
+
+</table>

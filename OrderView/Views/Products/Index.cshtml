@@ -1,0 +1,67 @@
+﻿@model List<OrderView.Models.Products>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <style type="text/css">
+        th td {
+            width: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <table width="50%" border="1">
+            <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+            </tr>
+
+            @foreach (OrderView.Models.Products item in @Model)
+            {
+                <tr onclick="SelectRow(this)">
+
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Mobile
+                    </td>
+                    <td>
+                        @Html.ActionLink("Select", "Address", new { AddressString = item.Address });
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
